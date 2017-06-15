@@ -5,14 +5,18 @@ package com.company;
  */
 public class PickingResult  {
     private Item item;
-    private Location location;
 
-
-    public PickingResult (Item item) {
+    protected PickingResult (Item item) {
         this.item = item;
     }
 
-    public Item getItem(){
+    protected Item getItem(){
         return this.item;
     }
+
+    protected String getItemLoc(){return this.item.getLocation();}
+
+    protected String getItemName(){return this.item.getName();}
+
+    protected int getItemLevel(){return this.item.getLevel();}
 }

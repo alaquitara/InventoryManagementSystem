@@ -5,52 +5,56 @@ package com.company;
  */
 public class Item {
 
-   // private String id; //id reference to the item
     private int level;  //amount of item in inventory
-    private String name; //name of item
-    private Location location; //physical location of item
+    private String name; //name of item.  Also used as productId
+    private String location; //physical location of item
+
+    private Item(){}//prevent default
 
     //Constuctor for the Item class
-    public Item(String name, int level, Location location){
+    protected Item(String name, int level, String location){
         this.name = name;
         this.level =  level;
         this.location = location;
     }
 
     //method to return item name
-    public String getName(){
+    protected String getName(){
         return this.name;
     }
 
+    //rename an item
     protected void setName(String name){
         this.name = name;
     }
 
     //method to return item level
-    public int getLevel(){
+    protected int getLevel(){
         return this.level;
     }
 
+    //change level value of an item
     protected void setLevel(int level){
         this.level = level;
     }
 
     //method to return item location
-    public Location getLocation(){
+    protected String getLocation(){
         return this.location;
     }
 
-    protected void setLocation(Location location){
+    //change location of an item
+    protected void setLocation(String location){
         this.location = location;
     }
 
     //removes x amount of items from inventory
-    public void pickItem(int x ){
+    protected void pickItem(int x ){
         this.level -=x;
     }
 
     //adds x amount of items from inventory
-    public void restockItem(int x){
+    protected void restockItem(int x){
         this.level += x;
     }
 }
